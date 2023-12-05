@@ -2,85 +2,144 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     min-height: 100vh;
-  }
-.page{
+}
+
+.page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.header{
+
+.header {
     background-color: slategray;
     color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header1 {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 80px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    align-items: center;
 }
-.header1{
-    display: flex;
-    justify-content: space-between;
+
+.header1-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
 }
-.header1-text{
-    font-weight: 1000;
-    font-size: larger;
-    -webkit-text-stroke: medium;
-}
-.header1-links{
-    display: flex;
-    justify-content: left;
-    padding: 8px;
-    gap: 32px;
-}
-.header2{
+
+.header1-links {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
-.header2-left{
+
+.header1-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header1-links a:hover {
+    background-color: #333;
+}
+
+.header2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    margin-right: 100px;
-}
-.header2-right{
-    display: flex;
-    align-content: center;
+    align-items: center;
     margin-top: 20px;
 }
-.container{
+
+.header2-left {
+    margin-bottom: 20px;
+}
+
+.header2-right-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background: cadetblue;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header2-right-img::before {
+   
+    position: absolute;
+    color: white;
+    font-weight: bold;
+}
+
+.header2-right {
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .header1-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header1-links a {
+        margin-bottom: 10px;
+    }
+}
+
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.main-title{
-    font-size: xxx-large;
+
+.main-title {
+    font-size: x-large; /* Adjusted font size for smaller screens */
     font-weight: 900;
     -webkit-text-stroke: medium;
 }
-.header2-right-img{
-    width: 400px;
-    height: 150px;
+
+.header2-right-img {
+    width: 400px; /* Adjusted width for smaller screens */
+    height: auto;
+    max-width: 400px; /* Set max-width to avoid overflow on smaller screens */
     background: cadetblue;
     text-align: center;
 }
+
 .footer {
     height: 20px;
-    background:slategray;
+    background: slategray;
     color: #eee;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
     display: flex;
     font-size: small;
-  }
-  a{
+}
+
+a {
     text-decoration: none;
     color: white;
-  }
-  button {
+}
+
+button {
     margin: 20px;
     width: fit-content;
     height: min-content;
@@ -96,47 +155,51 @@ body {
     border: none;
     transition: all 0.4s ease 0s;
 }
-  
-    button:hover {
-        box-shadow: inset;
+
+button:hover {
+    box-shadow: inset;
     text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
     transition: all 0.4s ease 0s;
-  }
-  img:-moz-broken{
+}
+
+img:-moz-broken {
     opacity: 0;
-  }
-  .information{
+}
+
+.information {
     display: flex;
     margin: 20px;
     margin-top: 0;
     margin-bottom: 8px;
     text-align: center;
-  }
-  .info{
+}
+
+.info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: inherit;
-  }
-  .info img{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
+}
+
+.info img {
+    width: 80px;
+    height: 80px;
     margin: 10px;
     background: gainsboro;
     border: groove;
     font-variant-caps: all-small-caps;
-  }
-  .container-title{
+}
+
+.container-title {
     text-align: center;
     font-weight: 900;
-    font-size: larger;
-  }
-  .quote{
+    font-size: medium; /* Adjusted font size for smaller screens */
+}
+
+.quote {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,29 +208,65 @@ body {
     background: lavender;
     padding: 16px;
     min-width: -webkit-fill-available;
-  }
-  .quote-text{
+}
+
+.quote-text {
     font-style: italic;
     font-weight: 300;
-  }
-  
-  .quote-reference{
+}
+
+.quote-reference {
     font-weight: bolder;
     align-items: end;
-  }
-  .message-box{
+}
+
+.message-box {
     background: deepskyblue;
     padding: 12px;
     margin: 8px;
     border-radius: 32px;
     display: inline-flex;
 }
-.message-box-text{
+
+.message-box-text {
     text-align: justify;
     margin: 8px;
     color: #eee;
 }
-.message-box-text1{
+
+.message-box-text1 {
     font-weight: bolder;
     margin: 8px;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .header {
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
+
+    .header1-links {
+        gap: 8px; /* Further reduced gap for smaller screens */
+    }
+
+    .main-title {
+        font-size: large; /* Adjusted font size for smaller screens */
+    }
+
+    .info img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .container-title {
+        font-size: small; /* Adjusted font size for smaller screens */
+    }
+
+    .quote {
+        padding: 8px;
+    }
+
+    .message-box {
+        border-radius: 16px;
+    }
 }
